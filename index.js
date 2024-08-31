@@ -4,7 +4,6 @@ function getComputerChoice() {
   return choices[randomNumber];
 }
 let count = 0;
-
 var humanScore = 0;
 var computerScore = 0;
 let computerChoice = getComputerChoice();
@@ -27,12 +26,10 @@ function playRound(humanChoice, computerChoice) {
     return ["You lose!", humanScore, computerScore];
   }
 }
-
 const btns = document.querySelectorAll("button");
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const humanChoice = btn.id;
-
     const [result, humanScore, computerScore] = playRound(
       humanChoice,
       computerChoice
@@ -43,12 +40,9 @@ btns.forEach((btn) => {
     let computerScoree = document.getElementById("computer-score");
     humanScoree.textContent = `${humanScore}`;
     computerScoree.textContent = `${computerScore}`;
-
     round.textContent = `Round ${count}`;
     let computerTitle = document.getElementById("cChoice");
     computerTitle.textContent = ` ${computerChoice}`;
-
-    // let result = playRound(humanChoice, computerChoice)
     let resultTitle = document.getElementById("result");
     resultTitle.textContent = `${result}`;
     console.log(count);
@@ -60,14 +54,12 @@ btns.forEach((btn) => {
       } else {
         resultTitle.textContent = "It's a tie!";
       }
-      
     }
-    if (count ===6) {
+    if (count === 6) {
       restartGame();
     }
     computerChoice = getComputerChoice();
   });
-  
 });
 function restartGame() {
   humanScore = 0;
