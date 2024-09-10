@@ -1,1 +1,1 @@
-this is q si;ple rock pqper sicors qnd i still did not qdd css 
+this is a simple rock paper sicors and i still did not add css 
